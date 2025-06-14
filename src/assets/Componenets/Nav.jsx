@@ -18,8 +18,10 @@ function Nav() {
     <nav className="navbar">
       <div className="logo-container">
         <Link to="/">
+
           <img src="\ChatGPT Image Jun 15, 2025, 09_58_33 PM.png" alt="Logo" />
-        </Link>
+
+</Link>
       </div>
 
       <div className="hamburger" onClick={toggleMenu}>

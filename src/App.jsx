@@ -10,8 +10,10 @@ import WhatsAppButton from './assets/Componenets/WhatsappButton.jsx'
 import Product from './assets/Componenets/Product.jsx'
 import CNGFitting from './assets/Componenets/CNGFitting.jsx'
 import CNGSERVICE from './assets/Componenets/CNGSERVICE.jsx'
+
 import MechanicalWorks from './assets/Componenets/MechenicalWorks.jsx'
 import MECHANICAL from './assets/Componenets/MECHANICAL.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,8 +27,9 @@ function App() {
 <Route path="/Aboutus" element={<Aboutus />} />
 <Route path="/CNGFitting" element={<CNGFitting />} />
 <Route path="/CNGSERVICE" element={<CNGSERVICE />} />
+
 <Route path="/MECHANICAL" element={<MECHANICAL/>} />
- </Routes>
+</Routes>
  <WhatsAppButton/>
       <Footer/>
     </Router>
