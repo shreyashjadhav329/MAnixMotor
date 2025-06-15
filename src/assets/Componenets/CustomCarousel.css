@@ -1,0 +1,84 @@
+.carousel-container {
+  height: 80vh;
+  width: 90%;
+  overflow: hidden;
+  margin-bottom: 4rem; /* Add spacing after carousel */
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  max-height: 600px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+.carousel-image.active {
+  display: block;
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0.4em 0.8em;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 50vh;
+  }
+
+  .carousel-image {
+    object-fit: contain;
+    background-color: #000;
+  }
+
+  .carousel-button {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    height: 40vh;
+  }
+
+  .carousel-button {
+    font-size: 1.5rem;
+  }
+}

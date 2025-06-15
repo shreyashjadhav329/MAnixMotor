@@ -1,0 +1,106 @@
+/* Main container for Home.jsx */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Slide section container */
+.slide-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+/* Reversed slide layout for alternating direction */
+.slide-box.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image in the slide section */
+.slide-image {
+  width: 45%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Text content in the slide section */
+.slide-content {
+  width: 50%;
+  min-width: 280px;
+}
+
+.slide-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.slide-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Carousel spacing */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .slide-image {
+    width: 50%;
+  }
+
+  .slide-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-box {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .slide-image,
+  .slide-content {
+    width: 100%;
+  }
+
+  .slide-title {
+    font-size: 1.5rem;
+  }
+
+  .slide-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 1.25rem;
+  }
+
+  .slide-description {
+    font-size: 0.95rem;
+  }
+
+  .home-container {
+    padding: 1rem;
+  }
+}

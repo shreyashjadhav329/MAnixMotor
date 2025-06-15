@@ -1,0 +1,55 @@
+<<<<<<< HEAD
+services:
+  - name: manix-backend
+    type: web
+    env: node
+    region: oregon
+    branch: main
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - name: manix-frontend
+    type: web
+    env: node
+    region: oregon
+    branch: main
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: manix-backend
+          property: host
+=======
+services:
+  - name: manix-backend
+    type: web
+    env: node
+    region: oregon
+    branch: main
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - name: manix-frontend
+    type: web
+    env: node
+    region: oregon
+    branch: main
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: manix-backend
+          property: host
+>>>>>>> 66e9a98 (Add full project including backend and frontend)
