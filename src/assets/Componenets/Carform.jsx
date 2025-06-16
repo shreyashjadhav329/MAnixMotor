@@ -22,7 +22,7 @@ const Carform = ({ onCarAdded }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/add-row', formData)
+    axios.post('https://manixmotorscngbackend.onrender.com/add-row', formData)
       .then(() => {
         alert("✅ Car data saved to Google Sheet!");
         setFormData({

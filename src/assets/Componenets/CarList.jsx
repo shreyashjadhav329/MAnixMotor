@@ -11,7 +11,7 @@ function CarList() {
       return;
     }
 
-    axios.get(`http://localhost:5000/cars?mobile=${mobileNumber}`)
+    axios.get(`https://manixmotorscngbackend.onrender.com/cars?mobile=${mobileNumber}`)
       .then(response => {
         setCars(response.data);
       })
@@ -25,7 +25,7 @@ function CarList() {
     if (!window.confirm("Are you sure you want to delete this car?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/cars/${rowNumber}`);
+      await axios.delete(`https://manixmotorscngbackend.onrender.com/cars/${rowNumber}`);
       alert("✅ Car deleted successfully.");
       fetchCars();
     } catch (err) {
@@ -34,7 +34,6 @@ function CarList() {
     }
   };
 
-  // ✅ Inline styles
   const containerStyle = {
     padding: '2rem',
     maxWidth: '100%',
