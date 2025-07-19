@@ -11,7 +11,10 @@ function CarList() {
       return;
     }
 
-    axios.get(`https://manixmotorscngbackend.onrender.com/cars?mobile=${mobileNumber}`)
+
+   
+    axios.get(`https://sheetdb.io/api/v1/nyoht4nfn4p06/search?MobileNumber=${mobileNumber}`)
+
       .then(response => {
         setCars(response.data);
       })
@@ -21,13 +24,16 @@ function CarList() {
       });
   };
 
-  const deleteCar = async (rowNumber) => {
+  const deleteCar = async (carNumber) => {
     if (!window.confirm("Are you sure you want to delete this car?")) return;
 
     try {
-      await axios.delete(`https://manixmotorscngbackend.onrender.com/cars/${rowNumber}`);
+a
+
+      await axios.delete(`https://sheetdb.io/api/v1/nyoht4nfn4p06/carNumber/${carNumber}`);
+
       alert("✅ Car deleted successfully.");
-      fetchCars();
+      fetchCars(); // Refresh after deletion
     } catch (err) {
       console.error("❌ Error deleting car:", err);
       alert("Failed to delete car.");
@@ -119,13 +125,13 @@ function CarList() {
                   <td style={thTdStyle}>{car.carNumber}</td>
                   <td style={thTdStyle}>{car.cngKitNumber}</td>
                   <td style={thTdStyle}>{car.cngKitModelName}</td>
-                  <td style={thTdStyle}>{car.fittingDate}</td>
-                  <td style={thTdStyle}>{car.lastServiceDate}</td>
-                  <td style={thTdStyle}>{car.nextServiceDate}</td>
-                  <td style={thTdStyle}>{car.testingDate}</td>
+                  <td style={thTdStyle}>{car.FittingDate}</td>
+                  <td style={thTdStyle}>{car.LastServiceDate}</td>
+                  <td style={thTdStyle}>{car.serviceDate || '-'}</td>
+                  <td style={thTdStyle}>{car.testingDate || '-'}</td>
                   <td style={thTdStyle}>
                     <button
-                      onClick={() => deleteCar(car.rowNumber)}
+                      onClick={() => deleteCar(car.carNumber)}
                       style={{ ...buttonStyle, backgroundColor: '#dc3545' }}
                     >
                       Delete

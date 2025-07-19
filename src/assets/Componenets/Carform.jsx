@@ -22,7 +22,12 @@ const Carform = ({ onCarAdded }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('https://manixmotorscngbackend.onrender.com/add-row', formData)
+    // Wrap inside `data` as required by SheetDB
+    const payload = {
+      data: formData
+    };
+
+    axios.post('https://sheetdb.io/api/v1/nyoht4nfn4p06', payload)
       .then(() => {
         alert("✅ Car data saved to Google Sheet!");
         setFormData({
