@@ -1,5 +1,5 @@
 import React from 'react'
-import CNGTestingInfo from './CNGtestinginfo'
+import CNGTestingInfo from './CNGTestingInfo.jsx'
 
 
 function CNGSERVICE() {
